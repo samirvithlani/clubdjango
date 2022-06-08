@@ -1,8 +1,10 @@
+import email
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.db.models import *
 
 
-from .models import Student
+from .models import Doctor, Paitent, Student
 
 # Create your views here.
 def getStudentData(request):
@@ -26,8 +28,35 @@ def getStudentData(request):
     print(students)
     print(students7)
     print(students9)
+    return render(request,"orm/studentList.html",{'studentList':studentList})
+
+def addStudent(request):
+    s = Student(name="tejas",age = "35",email="tejas@gmail.com",isActive = "True",password = "tejas@1121",rollno = "6")
+    s.name = "dhiraj"
+    s.save()
+    return render(request,"orm/studentList.html")
+
+def updateStudent(request):
+    s = Student.objects.get(id =4)
+    s.name = "rama"
+    s.save()
+    return render(request,"orm/studentList.html")
+
+def deleteStudent(request):
+    s = Student.objects.filter(email__startswith="t").delete()
+    return render(request,"orm/studentList.html")
 
 
+def addDocotr_paitnet(request):
+    #d = Doctor(name="tejas",age = "35",email="raj@doc.com",isActive = "True",password = "tejas@1121",rollno = "6")
+    #d.save()
+    d = Doctor.objects.get(id = 1)
+    p = Paitent(doctor = d,name = "harshil",age = "35")
+    p.save()
 
-    return render(request,"orm/studentList.html",{'studentList':students})
+    return HttpResponse("<h1>Doctor and Paitent Added</h1>")
 
+def getDoctor_paitentData(request):
+    doctorList = Doctor.objects.all().values()
+    paitentList = Paitent.objects.all().values()
+    return render(request,"orm/doctorList.html",{'doctorList':doctorList,'paitentList':paitentList})    
