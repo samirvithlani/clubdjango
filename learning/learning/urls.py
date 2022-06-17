@@ -23,5 +23,7 @@ urlpatterns = [
     #path('',views.index)
     path('blog/',include('blog.urls')),
     path('orm/',include('orm.urls')),
+    path('ecom/',include('ecom.urls')),
+    path('cbv/',include('cbv.urls')),
     #path('news/',include('news.urls')),
 ]
