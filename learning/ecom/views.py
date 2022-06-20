@@ -17,3 +17,9 @@ class CreateProduct(CreateView):
     fields = ['name','description','price','qty']
     template_name ="product/create.html"
     success_url = "/product/list/"
+
+class DeleteProduct(DeleteView):
+    model = Product
+    template_name ="product/delete.html"
+    success_url = "/product/list/" 
+
