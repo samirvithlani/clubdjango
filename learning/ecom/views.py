@@ -1,5 +1,6 @@
 
 from dataclasses import field
+from django.views import View
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.shortcuts import render
@@ -23,3 +24,5 @@ class DeleteProduct(DeleteView):
     template_name ="product/delete.html"
     success_url = "/product/list/" 
 
+def index(request):
+    return render(request,"index.html")
