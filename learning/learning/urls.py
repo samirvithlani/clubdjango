@@ -25,5 +25,6 @@ urlpatterns = [
     path('orm/',include('orm.urls')),
     path('ecom/',include('ecom.urls')),
     path('cbv/',include('cbv.urls')),
+    path('crud/',include('crud.urls')),
     #path('news/',include('news.urls')),
 ]

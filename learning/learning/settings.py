@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'orm',
     'ecom',
     'cbv',   
+    'crud',
 ]
 
 MIDDLEWARE = [

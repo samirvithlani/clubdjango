@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  {% for p  in players  %}
+  <tbody>
+  
+    <tr>
+      <th scope="row">{{p.id}}</th>
+      <td>{{p.pname}}</td>
+      <td>{{p.pscore}}</td>
+      <td>{{p.pstatus}}</td>
+    </tr>
+    
+   </tbody>
+   {% endfor %}
+</table>
+{% endblock content %}
