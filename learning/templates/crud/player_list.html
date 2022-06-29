@@ -1,5 +1,5 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
+<a href="{% url 'crud:addplayer'%}">ADD</a>
 <table class="table table-striped table-dark">
   <thead>
     <tr>
@@ -9,17 +9,16 @@
       <th scope="col">Handle</th>
     </tr>
   </thead>
-  {% for p  in players  %}
+  {% for p in players %}
   <tbody>
-  
     <tr>
       <th scope="row">{{p.id}}</th>
       <td>{{p.pname}}</td>
       <td>{{p.pscore}}</td>
       <td>{{p.pstatus}}</td>
+      {% comment %} <td><a href = "{% url 'crud:delete',p.pk%}">DLETE</a></td> {% endcomment %}
     </tr>
-    
-   </tbody>
-   {% endfor %}
+  </tbody>
+  {% endfor %}
 </table>
 {% endblock content %}

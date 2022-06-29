@@ -1,1 +1,9 @@
 list view send context object name
+
+
+override 4 methods
+get
+get_context_object
+get queryset
+form_valid
+
