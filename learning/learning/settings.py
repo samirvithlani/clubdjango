@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'ecom',
     'cbv',   
     'crud',
-    'gui'
+    'gui',
+    'userApp'
+    
 ]
 
 MIDDLEWARE = [
@@ -57,7 +59,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'learning.urls'
-
+AUTH_USER_MODEL ="userApp.User"
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
