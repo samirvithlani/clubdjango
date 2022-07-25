@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import FormView
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth.views import LoginView,LogoutView
 
 from .models import User
 
@@ -20,3 +21,7 @@ class UserRegisterView(FormView):
         user.password = make_password(form.cleaned_data['password'])
         user.save()
         return super().form_valid(form)
+
+class UserLoginView(LoginView):
+    template_name = "userApp/login.html"
+       

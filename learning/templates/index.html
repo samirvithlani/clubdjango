@@ -11,6 +11,8 @@
     <button class = "btn btn-danger">DEMO</button>
     <img src = "{% static 'cover.png' %}"/>
     <h1>hello</h1>
+    {{request.user}}
+    <a href = "{% url 'logout' %}">logout</a>
     {% endblock content %}
 
 </body>

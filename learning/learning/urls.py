@@ -20,12 +20,12 @@ from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('',views.index)
+    path('index/',views.index),
     path('blog/',include('blog.urls')),
     path('orm/',include('orm.urls')),
     path('ecom/',include('ecom.urls')),
     path('cbv/',include('cbv.urls')),
     path('crud/',include('crud.urls')),
-    #path('news/',include('news.urls')),
+    path('news/',include('news.urls')),
     path('user/',include('userApp.urls')),
 ]
