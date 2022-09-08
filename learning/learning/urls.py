@@ -28,4 +28,5 @@ urlpatterns = [
     path('crud/',include('crud.urls')),
     path('news/',include('news.urls')),
     path('user/',include('userApp.urls')),
+    path('sign/',include('singnals.urls')),
 ]

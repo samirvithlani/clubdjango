@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'gui',
     'userApp',
     'crispy_forms',
+    'singnals',
     
 ]
 
@@ -88,7 +89,7 @@ WSGI_APPLICATION = 'learning.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql',
-        'NAME':'club2',
+        'NAME':'club33',
         'USER':'postgres',
         'PASSWORD':'postgres',
         'HOST':'localhost',
